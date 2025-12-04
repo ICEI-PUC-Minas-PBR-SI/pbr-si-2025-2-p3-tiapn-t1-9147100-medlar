@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faça uma Pergunta | PUC Integra</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/pergunta.css">
+</head>
+<body>
+
+    <nav class="top-nav">
+        <div class="nav-left">
+            <a href="/html/homepage.html" class="brand-link">
+                <span class="brand-text">PUC INTEGRA</span>
+            </a>
+        </div>
+
+        <div class="nav-right">
+            <ul class="nav-links">
+                <li><a href="/html/homepage.html">Home</a></li>
+                <li><a href="/html/feed.html">Feed</a></li>
+            </ul>
+            
+            <a href="/html/perfil.html" class="profile-btn" title="Ir para Perfil">
+                <i class="fas fa-user-circle"></i>
+            </a>
+        </div>
+    </nav>
+
+    <main class="main-container">
+        <div class="content-wrapper">
+            <h2>Faça uma pergunta</h2>
+
+            <form id="question-form" enctype="multipart/form-data">
+                
+                <div class="form-grid-top">
+                    <div class="form-group title-group">
+                        <label for="titulo">Título da Dúvida <span class="required">*</span></label>
+                        <input type="text" id="titulo" name="titulo" placeholder="Ex: Dúvida sobre normalização de dados" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="curso">Curso</label>
+                        <select id="curso" name="curso">
+                            <option value="">Selecione o Curso</option>
+                            <option value="1">Sistemas de Informação</option>
+                            <option value="2">Análise e Desenvolvimento de Sistemas</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="disciplina">Disciplina <span class="required">*</span></label>
+                        <select id="disciplina" name="disciplina" required>
+                            <option value="">Selecione a Disciplina</option>
+                            
+                            <option value="200">ALGORITMOS E TÉCNICAS DE PROGRAMAÇÃO</option>
+                            <option value="201">DESENVOLVIMENTO WEB FRONT-END</option>
+                            <option value="202">FUNDAMENTOS DE SISTEMAS DE INFORMAÇÃO</option>
+                            <option value="203">INTRODUÇÃO À COMPUTAÇÃO</option>
+                            <option value="204">MENTORIA DE CARREIRA</option>
+                            <option value="205">METODOLOGIAS DE EXTENSÃO UNIVERSITÁRIA</option>
+                            <option value="206">TRABALHO INTERDISCIPLINAR: APLICAÇÕES WEB FRONT-END</option>
+                            <option value="207">ALGORITMOS E ESTRUTURA DE DADOS</option>
+                            <option value="208">BANCO DE DADOS</option>
+                            <option value="209">DESENVOLVIMENTO WEB BACK-END</option>
+                            <option value="210">MODELAGEM DE PROCESSOS DE NEGÓCIOS</option>
+                            <option value="211">TRABALHO INTERDISCIPLINAR: APLICAÇÕES PARA PROCESSOS DE NEGÓCIO</option>
+                            <option value="212">BANCO DE DADOS NOSQL</option>
+                            <option value="213">FUNDAMENTOS DE CÁLCULO</option>
+                            <option value="214">INTERAÇÃO HUMANO - COMPUTADOR</option>
+                            <option value="215">PROGRAMAÇÃO ORIENTADA POR OBJETOS</option>
+                            <option value="216">REQUISITOS DE SOFTWARE</option>
+                            <option value="217">TRABALHO INTERDISCIPLINAR: APLICAÇÕES INTERATIVAS</option>
+                            <option value="218">DESENVOLVIMENTO DE APLICAÇÕES DISTRIBUÍDAS E MÓVEIS</option>
+                            <option value="219">ESTATÍSTICA E PROBABILIDADE</option>
+                            <option value="220">PROJETO DE REDES DE COMPUTADORES</option>
+                            <option value="221">PROJETO E ARQUITETURA DE SOFTWARE</option>
+                            <option value="222">TRABALHO INTERDISCIPLINAR: APLICAÇÕES DISTRIBUÍDAS PARA SUSTENTABILIDADE</option>
+                            <option value="223">ALGORITMOS EM GRAFOS</option>
+                            <option value="224">CULTURA E PRÁTICAS DEVOPS</option>
+                            <option value="225">CULTURA RELIGIOSA I</option>
+                            <option value="226">FUNDAMENTOS DE INTELIGÊNCIA ARTIFICIAL</option>
+                            <option value="227">GERÊNCIA DE PROJETO DE SOFTWARE</option>
+                            <option value="228">TESTE E QUALIDADE DE SOFTWARE</option>
+                            <option value="229">TRABALHO INTERDISCIPLINAR: PROJETO DE IMPLANTAÇÃO DE SOFTWARE</option>
+                            <option value="230">ARQUITETURA DE COMPUTADORES</option>
+                            <option value="231">BUSINESS INTELIGENCE</option>
+                            <option value="232">CÁLCULO E ALGEBRA MATRICIAL</option>
+                            <option value="233">CULTURA RELIGIOSA II</option>
+                            <option value="234">INTRODUÇÃO À INOVAÇÃO TECNOLÓGICA</option>
+                            <option value="235">INTRODUÇÃO À PESQUISA EM INFORMÁTICA</option>
+                            <option value="236">RECUPERAÇÃO DE INFORMAÇÃO NA WEB E REDES SOCIAIS</option>
+                            <option value="237">TRABALHO INTERDISCIPLINAR: PESQUISA E INOVAÇÃO INFORMÁTICA</option>
+                            <option value="238">ANÁLISE DE ALGORITMOS</option>
+                            <option value="239">ARQUITETURA DE REDES DE COMPUTADORES</option>
+                            <option value="240">CIBERSEGURANÇA</option>
+                            <option value="241">FILOSOFIA: LÓGICA E PENSAMENTO CRÍTICO</option>
+                            <option value="242">FUNDAMENTOS DE SISTEMAS OPERACIONAIS</option>
+                            <option value="243">OTIMIZAÇÃO DE SISTEMAS COMPUTACIONAIS</option>
+                            <option value="244">TRABALHO INTERDISCIPLINAR: INFRAESTRUTURA PARA SISTEMAS DE INFORMAÇÃO</option>
+                            <option value="245">CIDADANIA E RESPONSABILIDADE SOCIAL</option>
+                            <option value="246">CIÊNCIA DE DADOS E INTELIGÊNCIA ARTIFICIAL</option>
+                            <option value="247">FILOSOFIA: ÉTICA E RAZÃO PRÁTICA</option>
+                            <option value="248">GOVERNANÇA DE TECNOLOGIA DA INFORMAÇÃO</option>
+                            <option value="249">SISTEMAS INTEGRADOS DE GESTÃO EMPRESARIAL</option>
+                            <option value="250">TECNOLOGIAS DA INFORMAÇÃO E DO CONHECIMENTO</option>
+                            <option value="251">TRABALHO DE CONCLUSÃO DE CURSO</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-grid-main">
+                    <div class="editor-column">
+                        <label for="descricao-editor">Descrição Detalhada <span class="required">*</span></label>
+                        <div class="rich-text-editor">
+                            <div class="editor-toolbar">
+                                <button type="button" data-cmd="bold" title="Negrito"><i class="fas fa-bold"></i></button>
+                                <button type="button" data-cmd="italic" title="Itálico"><i class="fas fa-italic"></i></button>
+                                <button type="button" data-cmd="underline" title="Sublinhado"><i class="fas fa-underline"></i></button>
+                                <span class="divider"></span>
+                                <input type="file" id="file-input" multiple style="display: none;" accept="image/*,.pdf">
+                                <button type="button" id="btn-attach-trigger" title="Anexar Arquivo"><i class="fas fa-paperclip"></i></button>
+                            </div>
+                            <div id="descricao-editor" class="editor-content" contenteditable="true"></div>
+                        </div>
+                        <p class="helper-text">Descreva sua dúvida com detalhes.</p>
+                    </div>
+
+                    <div class="sidebar-column">
+                        <div class="sidebar-box">
+                            <label>Anexos (<span id="file-count">0</span>/3)</label>
+                            <div id="attachments-preview" class="attachments-list"></div>
+                        </div>
+
+                        <div class="sidebar-box tags-box">
+                            <label for="tag-input">Palavras-Chave <span class="required">*</span></label>
+                            <div class="tag-input-container">
+                                <input type="text" id="tag-input" placeholder="Digite e tecle Enter...">
+                            </div>
+                            <div id="tags-list" class="tags-list"></div>
+                            <input type="hidden" name="palavras_chave" id="hidden-tags">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-actions-bar">
+                    <div class="actions-container">
+                        <button type="button" class="btn btn-secondary" onclick="window.history.back()">Cancelar</button>
+                        <button type="submit" class="btn btn-primary" id="btn-submit-publish">Publicar Dúvida</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer-cta">
+        <div class="container">
+            <p>Está buscando uma resposta?</p>
+            <a href="/html/feed.html"><button class="btn-main">Explorar Feed</button></a>
+        </div>
+    </footer>
+
+    <footer class="puc-integra-footer">
+        <div class="footer-container">
+            
+            <div class="footer-col brand-col">
+                <div class="footer-logo">
+                    <img src="/docs/images/logo_puc.png" alt="Logo PUC Integra" class="footer-logo-img">
+                    <span class="footer-brand-text">PUC INTEGRA</span>
+                </div>
+                <p class="footer-desc">
+                    Conectando alunos, transformando dúvidas em conhecimento e fortalecendo a comunidade acadêmica da PUC Minas.
+                </p>
+            </div>
+
+            <div class="footer-col links-col">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="/html/homepage.html">Tela Inicial</a></li>
+                    <li><a href="/html/pergunta.html">Perguntas</a></li>
+                    <li><a href="#">Disciplinas</a></li>
+                    <li><a href="#">Comunidades</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col links-col">
+                <h4>Suporte</h4>
+                <ul>
+                    <li><a href="#">Central de Ajuda</a></li>
+                    <li><a href="#">Diretrizes da Comunidade</a></li>
+                    <li><a href="#">Política de Privacidade</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col contact-col">
+                <h4>Fale Conosco</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+                <p class="contact-email"><i class="far fa-envelope"></i> contato@pucintegra.com.br</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; <span id="current-year">2025</span> PUC Integra. Todos os direitos reservados.</p>
+            <p>Desenvolvido com <i class="fas fa-heart"></i> por alunos de Sistemas de Informação.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+    <script src="/js/pergunta.js"></script>
+</body>
+</html>

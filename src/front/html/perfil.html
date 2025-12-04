@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Perfil | PUC Integra</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/perfil.css">
+</head>
+<body>
+
+    <aside id="profile-sidebar" class="profile-sidebar">
+        <div class="sidebar-header">
+            <h3>Menu</h3>
+            <button id="close-sidebar">&times;</button>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="#"><i class="fas fa-cog"></i> Configurações</a></li>
+            <li><a href="#"><i class="fas fa-question-circle"></i> Ajuda</a></li>
+            <li class="logout-item"><a href="#" id="btn-logout-sidebar"><i class="fas fa-sign-out-alt"></i> Sair da Conta</a></li>
+        </ul>
+    </aside>
+
+    <button id="sidebar-toggle" class="floating-menu-btn"><i class="fas fa-bars"></i></button>
+
+    <nav class="top-nav-profile">
+        <div class="container nav-container">
+            <div class="nav-brand">
+                <span class="brand-text">PUC INTEGRA</span>
+            </div>
+            <div class="nav-links">
+                <a href="/html/homepage.html">Home</a>
+                <a href="/html/feed.html">Feed</a> <a href="/html/pergunta.html">Nova Pergunta</a>
+                <a href="#" onclick="logout()" style="color: #dc3545; font-weight: bold;">
+                    <i class="fas fa-sign-out-alt"></i> Sair
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="profile-wrapper">
+        
+        <div class="profile-cover"></div>
+
+        <div class="container profile-grid">
+            <aside class="user-sidebar">
+                <div class="profile-card">
+                    
+                    <div class="avatar-container">
+                        <img src="/docs/images/default-avatar.png" id="profile-img-display" alt="Avatar">
+                        <button class="edit-avatar-btn" onclick="document.getElementById('btn-open-edit').click()">
+                            <i class="fas fa-camera"></i>
+                        </button>
+                    </div>
+
+                    <h1 id="user-name-display">Carregando...</h1>
+                    <span id="user-type-display" style="background:#e9ecef; color:#555; padding:2px 8px; border-radius:10px; font-size:0.8rem; margin-bottom:5px; display:inline-block;">...</span>
+                    
+                    <p class="user-handle" id="user-matricula-display">@...</p>
+                    <p class="user-bio" id="user-bio-display">...</p>
+                    
+                    <div class="stats-row">
+                        <div class="stat-item">
+                            <strong id="stat-questions">0</strong>
+                            <span>Perguntas</span>
+                        </div>
+                        <div class="stat-item">
+                            <strong id="stat-answers">0</strong>
+                            <span>Respostas</span>
+                        </div>
+                    </div>
+
+                    <button class="btn-edit-full" id="btn-open-edit">Editar Perfil</button>
+                </div>
+            </aside>
+
+            <section class="content-feed">
+                <div class="feed-tabs">
+                    <button class="tab-btn active" data-tab="questions">Minhas Perguntas</button>
+                    <button class="tab-btn" data-tab="interactions">Minhas Interações</button>
+                </div>
+
+                <div id="questions-tab" class="tab-content active">
+                    <div id="questions-list" class="items-list">
+                        </div>
+                </div>
+
+                <div id="interactions-tab" class="tab-content">
+                    <div id="interactions-list" class="items-list">
+                        </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+    <div id="edit-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Editar Perfil</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <form id="edit-profile-form">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Foto</label>
+                        <input type="file" id="edit-photo-input" accept="image/*">
+                    </div>
+                    <div class="form-group">
+                        <label>Nome</label>
+                        <input type="text" id="edit-name-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Biografia</label>
+                        <textarea id="edit-bio-input" rows="3" maxlength="150"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn-save">Salvar Alterações</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="/js/perfil.js"></script>
+</body>
+</html>

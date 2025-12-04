@@ -1,0 +1,389 @@
+:root {
+    --puc-blue: #007bff;
+    --puc-dark: #005380;
+    --bg-light: #f4f7f9;
+    --text-dark: #333;
+    --white: #ffffff;
+    --border: #e1e4e8;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+body { background-color: var(--bg-light); color: var(--text-dark); }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 15px; }
+
+/* Navbar (Reutilizada da Homepage para consistência) */
+.top-nav { background: linear-gradient(to right, #78c0e4, #3b769f); padding: 15px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+.nav-container { display: flex; justify-content: space-between; align-items: center; }
+.navbar-title { font-size: 1.5rem; font-weight: 800; color: white; letter-spacing: 1px; }
+.nav-links { display: flex; gap: 20px; align-items: center; }
+.nav-link { color: white; text-decoration: none; font-weight: 500; display: flex; align-items: center; gap: 8px; }
+.profile-icon-link { font-size: 2rem; color: white; display: flex; align-items: center; }
+.btn-nav-login { background: white; color: var(--puc-blue); padding: 8px 20px; border-radius: 20px; text-decoration: none; font-weight: bold; }
+
+/* Header do Feed */
+.feed-header { background: white; padding: 30px 0; border-bottom: 1px solid var(--border); margin-bottom: 30px; text-align: center; }
+.feed-header h1 { color: var(--puc-dark); margin-bottom: 5px; }
+.feed-header p { color: #666; }
+
+/* Layout Grid */
+.feed-main { display: grid; grid-template-columns: 250px 1fr; gap: 30px; padding-bottom: 50px; }
+
+/* Sidebar */
+.sidebar-card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); position: sticky; top: 20px; }
+.filter-list { list-style: none; margin: 15px 0; }
+.filter-list li { margin-bottom: 10px; }
+.filter-list a { text-decoration: none; color: #555; display: flex; align-items: center; gap: 10px; transition: 0.2s; }
+.filter-list a:hover, .filter-list a.active { color: var(--puc-blue); font-weight: 600; }
+.btn-new-question-side { display: block; background: var(--puc-blue); color: white; text-align: center; padding: 10px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: 0.2s; }
+.btn-new-question-side:hover { background: var(--puc-dark); }
+
+/* Card de Pergunta */
+.feed-card { background: white; border-radius: 8px; border: 1px solid var(--border); margin-bottom: 20px; overflow: hidden; transition: 0.2s; }
+.feed-card:hover { box-shadow: 0 4px 10px rgba(0,0,0,0.08); }
+
+.card-main { padding: 20px; }
+.card-header { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.85rem; color: #888; }
+.badge-discipline { background: #e3f2fd; color: var(--puc-blue); padding: 2px 8px; border-radius: 4px; font-weight: 600; }
+
+.card-title { font-size: 1.2rem; font-weight: 700; color: #333; margin-bottom: 10px; display: block; text-decoration: none; }
+.card-body { color: #555; line-height: 1.5; margin-bottom: 15px; }
+
+.card-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 15px; border-top: 1px solid #eee; }
+.author-info { display: flex; align-items: center; gap: 10px; font-size: 0.9rem; font-weight: 500; }
+.btn-toggle-answers { background: none; border: none; color: var(--puc-blue); cursor: pointer; font-weight: 600; font-size: 0.9rem; }
+.btn-toggle-answers:hover { text-decoration: underline; }
+
+/* Área de Respostas (Expandível) */
+.answers-section { background: #f9f9f9; padding: 0 20px; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; border-top: 1px solid transparent; }
+.answers-section.open { max-height: 1000px; /* Valor alto para permitir expansão */ border-top-color: var(--border); padding-bottom: 20px; overflow-y: auto; }
+
+.answer-item { padding: 15px 0; border-bottom: 1px solid #eee; display: flex; gap: 15px; }
+.answer-avatar { width: 35px; height: 35px; border-radius: 50%; background: #ccc; }
+.answer-content div { font-weight: 600; font-size: 0.9rem; margin-bottom: 2px; }
+.answer-content p { font-size: 0.95rem; color: #444; }
+
+.new-answer-box { margin-top: 15px; display: flex; gap: 10px; }
+.input-answer { flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 20px; outline: none; }
+.btn-send-answer { background: var(--puc-blue); color: white; border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; }
+
+/* Bloqueio */
+.lock-box { text-align: center; padding: 40px; background: white; border-radius: 8px; border: 1px solid var(--border); }
+.lock-box i { font-size: 2.5rem; color: #f0ad4e; margin-bottom: 15px; }
+.btn-login-lock { background: var(--puc-blue); color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; display: inline-block; margin-top: 10px; }
+
+/* --- Estilos para Imagem no Feed --- */
+.card-image-container {
+    margin-top: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #eee;
+    background-color: #f9f9f9;
+    max-height: 400px; /* Altura máxima para não ocupar a tela toda */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.feed-img-preview {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain; /* Garante que a imagem apareça inteira sem cortar */
+    display: block;
+}
+
+/* Ajustes finos para as respostas */
+.answers-loader { display: none; padding: 15px; text-align: center; color: #666; }
+.answer-avatar img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+
+/* =========================================
+   ESTILOS DO FOOTER (PUC INTEGRA)
+   ========================================= */
+
+/* Variáveis locais para garantir consistência sem depender dos outros arquivos */
+.puc-integra-footer {
+    --footer-bg: #005380;       /* Azul Escuro da Navegação */
+    --footer-text: #ffffff;     /* Texto Branco */
+    --footer-text-muted: #b3d7ff; /* Texto secundário azul claro */
+    --footer-hover: #3db0d9;    /* Azul Ciano para hover */
+    --font-family: 'Poppins', sans-serif;
+}
+
+.puc-integra-footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    font-family: var(--font-family);
+    padding: 60px 0 20px;
+    margin-top: auto; /* Empurra o footer para baixo se usar flex-grow no main */
+    position: relative;
+    z-index: 100;
+    width: 100%;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* Colunas */
+.footer-col {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-col.brand-col {
+    flex: 1.5; /* Coluna da marca um pouco mais larga */
+}
+
+/* Logo e Marca */
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.footer-logo-img {
+    width: 45px;
+    height: auto;
+    filter: brightness(0) invert(1); /* Torna o logo branco */
+}
+
+.footer-brand-text {
+    font-family: 'Comfortaa', sans-serif; /* Mesma fonte do logo no header */
+    font-size: 1.4em;
+    font-weight: 700;
+    color: var(--footer-text);
+}
+
+.footer-desc {
+    font-size: 0.95em;
+    line-height: 1.6;
+    color: var(--footer-text-muted);
+    max-width: 300px;
+}
+
+/* Títulos das Colunas */
+.footer-col h4 {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-col h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 3px;
+    background-color: var(--footer-hover);
+    border-radius: 2px;
+}
+
+/* Links */
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+    text-decoration: none;
+    color: var(--footer-text-muted);
+    font-size: 0.95em;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: var(--footer-text);
+    padding-left: 5px; /* Efeito de movimento sutil */
+}
+
+/* Redes Sociais */
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.social-links a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: var(--footer-text);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: var(--footer-hover);
+    transform: translateY(-3px);
+}
+
+.contact-email {
+    color: var(--footer-text-muted);
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Parte Inferior (Copyright) */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 50px;
+    padding-top: 25px;
+    text-align: center;
+    font-size: 0.85em;
+    color: var(--footer-text-muted);
+}
+
+.footer-bottom p {
+    margin: 5px 0;
+}
+
+.footer-bottom i {
+    color: #ff4757; /* Coração vermelho */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .footer-col h4::after {
+        width: 30px; /* Traço menor no mobile */
+    }
+}
+
+/* Responsividade */
+@media (max-width: 1080px) {
+    .news-carousel {
+        max-width: 90%; 
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text {
+        max-width: 100%;
+    }
+
+    .hero-image {
+        margin-top: 30px;
+        order: -1;
+    }
+
+    .section-title-large {
+        font-size: 2.5em;
+        margin-right: 0;
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .faq-section .container {
+        flex-direction: column;
+    }
+
+    .faq-carousel,
+    .news-carousel {
+        width: 100%;
+        max-width: 100%; 
+        flex-grow: 1;
+    }
+
+    .faq-card {
+        min-width: 90vw;
+        width: 90vw;
+    }
+
+    .news-card {
+        min-width: 90vw;
+        width: 90vw;
+    }
+
+    .faq-section .carousel-arrow,
+    .news-section .carousel-arrow {
+        display: none;
+    }
+
+    .categories-section .carousel-arrow {
+        display: block;
+    }
+}
+
+/* --- Botões de Reação (Like/Dislike) --- */
+.reaction-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #f1f3f5;
+    padding: 5px 12px;
+    border-radius: 20px;
+}
+
+.btn-reaction {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: #6c757d;
+    transition: transform 0.2s, color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.btn-reaction:hover {
+    transform: scale(1.1);
+}
+
+/* Like Ativo (Verde) */
+.btn-reaction.liked, .btn-reaction.liked i {
+    color: #28a745;
+}
+
+/* Dislike Ativo (Vermelho) */
+.btn-reaction.disliked, .btn-reaction.disliked i {
+    color: #dc3545;
+}
+
+.reaction-count {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #555;
+    min-width: 15px;
+    text-align: center;
+}
+
+/* Ajuste no card footer para acomodar as reações */
+.card-footer {
+    gap: 15px; /* Espaço entre autor, reações e botão responder */
+}
+
+@media (max-width: 768px) {
+    .feed-main { grid-template-columns: 1fr; }
+    .feed-sidebar { display: none; } /* Esconde sidebar no mobile */
+}

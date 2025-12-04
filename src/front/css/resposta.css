@@ -1,0 +1,383 @@
+/* ==============================
+   VARIÁVEIS GLOBAIS
+   ============================== */
+:root {
+  --header-h: 72px;               /* Altura do header */
+  --page-width: 1150px;           /* Largura máxima da página */
+  --accent-start: #3db0d9;        /* Cor inicial do gradiente */
+  --accent-end: #0e7bb3;          /* Cor final do gradiente */
+  --placeholder: #dedede;          /* Cor de fundo de placeholders/colunas */
+  --text: #0b0b0b;                 /* Cor do texto principal */
+  --muted: #6b6b6b;                /* Cor do texto secundário */
+  --btn-blue: #13a0db;             /* Cor azul padrão para botões */
+}
+
+/* ==============================
+   CONFIGURAÇÕES GERAIS
+   ============================== */
+* {
+  box-sizing: border-box;          /* Inclui padding e border no cálculo de largura */
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', system-ui, 'Segoe UI', Roboto, Arial;
+  color: var(--text);
+  background: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==============================
+   HEADER
+   ============================== */
+header {
+  height: var(--header-h);
+  background: linear-gradient(90deg, var(--accent-start), var(--accent-end));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 28px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+}
+
+/* Container interno do header */
+.container {
+  width: var(--page-width);
+  max-width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo circular */
+.logo-placeholder {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-placeholder span {
+  font-family: 'Comfortaa';
+  font-weight: 700;
+  color: white;
+  font-size: 18px;
+}
+
+/* Menu de navegação */
+nav {
+  display: flex;
+  gap: 36px;
+  align-items: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  opacity: 0.98;
+}
+
+/* Ações à direita do header */
+.right-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+/* Ícone de notificação (sino) */
+.bell {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.bell::after {
+  content: '';
+  position: absolute;
+  right: 6px;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  background: #ff3b30;           /* Bolinha de notificação vermelha */
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+/* ==============================
+   CONTEÚDO PRINCIPAL
+   ============================== */
+main {
+  padding: 48px 0 80px;
+  display: flex;
+  justify-content: center;
+}
+
+.page {
+  width: var(--page-width);
+  max-width: 95%;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 20px;
+  margin: 8px 0 22px;
+}
+
+/* Layout da área do editor */
+.editor-row {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* Coluna da esquerda (menu lateral ou informações) */
+.col-left {
+  width: 260px;
+  min-height: 420px;
+  background: var(--placeholder);
+  padding: 22px;
+}
+
+.col-left .box-title {
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+/* Coluna da direita (conteúdo principal / editor) */
+.col-right {
+  flex: 1;
+  min-height: 420px;
+  background: var(--placeholder);
+  padding: 22px;
+  position: relative;
+}
+
+.col-right .resp-title {
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* ==============================
+   TOOLBAR / FERRAMENTAS
+   ============================== */
+.toolbar {
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.tool-bubble {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  font-weight: 700;
+}
+
+.toolline {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.divider {
+  width: 1px;
+  height: 18px;
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.ico {
+  font-size: 18px;
+  color: #222;
+}
+
+/* ==============================
+   BOTÕES / AÇÕES
+   ============================== */
+.page-actions {
+  display: flex;
+  gap: 18px;
+  justify-content: flex-end;
+  margin-top: 64px;
+}
+
+.btn {
+  min-width: 120px;
+  padding: 12px 20px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.06);
+}
+
+.btn.cancel {
+  background: #fff;
+  color: #000000;
+  border: 2px solid rgba(16, 123, 179, 0.18);
+}
+
+.btn.send {
+  background: linear-gradient(180deg, #23aee0, #0a86bf);
+  color: rgb(0, 0, 0);
+  border: 0;
+  padding: 12px 28px;
+}
+
+.actions-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* ==============================
+   RESPONSIVO
+   ============================== */
+/* ==============================
+   RESPONSIVO
+   ============================== */
+@media (max-width: 980px) {
+  /* Ajusta o padding do container para telas menores */
+  .container {
+    padding: 0 16px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Oculta a coluna da esquerda em telas pequenas */
+  .col-left {
+    display: none;
+  }
+
+  /* Coluna direita ocupa toda a largura disponível */
+  .col-right {
+    min-height: 360px;
+    width: 100%;
+    padding: 16px;
+  }
+
+  /* Ajusta ações da página (botões) */
+  .page-actions {
+    margin-top: 36px;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  /* Toolbar no editor: centraliza em telas menores */
+  .toolbar {
+    left: 16px;
+    right: 16px;
+    bottom: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  /* Ajuste para títulos e textos grandes se necessário */
+  .title,
+  .col-right .resp-title {
+    font-size: 18px;
+  }
+}
+
+/* Ajustes adicionais para celulares bem pequenos */
+@media (max-width: 600px) {
+  header {
+    padding: 0 12px;
+  }
+
+  nav {
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .logo-placeholder {
+    width: 48px;
+    height: 48px;
+  }
+
+  .toolbar-btn {
+    font-size: 16px;
+    padding: 0 6px;
+  }
+}
+
+
+/* ==============================
+   TIPOGRAFIA
+   ============================== */
+h1 {
+  font-family: 'Comfortaa', 'Poppins', sans-serif;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* ==============================
+   BOTÕES DA TOOLBAR
+   ============================== */
+.toolbar-btn {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 0 8px;
+  color: #000;
+}
+
+.toolbar-divider {
+  color: #999;
+  margin: 0 4px;
+}
+
+/* ==============================
+   NOTIFICAÇÕES
+   ============================== */
+.notification i {
+  font-size: 22px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.notification i:hover {
+  opacity: 0.8;
+}
+
+.logo {
+  height: 50px;       /* tamanho da logo */
+  width: auto;        /* mantém proporção */
+  object-fit: contain; /* evita distorção */
+}
+
+.logo-placeholder {
+  display: flex;
+  align-items: center;
+}

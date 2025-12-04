@@ -1,19 +1,20 @@
 # REFERÊNCIAS
 
-_Como um projeto de software não requer revisão bibliográfica, a inclusão das referências não é obrigatória. No entanto, caso você deseje incluir referências relacionadas às tecnologias, padrões, ou metodologias que serão usadas no seu trabalho, relacione-as de acordo com a ABNT._
+## Referências Bibliográficas
 
-_Verifique no link abaixo como devem ser as referências no padrão ABNT:_
+**[1.1]** - ELMASRI, Ramez; NAVATHE, Sham. **Sistemas de banco de dados**. 7. ed. São Paulo: Pearson, c2019. E-book. ISBN 9788543025001.
 
-http://portal.pucminas.br/imagedb/documento/DOC_DSC_NOME_ARQUI20160217102425.pdf
+**[1.2]** - COPPIN, Ben. **Inteligência artificial**. Rio de Janeiro, RJ: LTC, c2010. E-book. ISBN 978-85-216-2936-8.
 
-**[1.1]** - _ELMASRI, Ramez; NAVATHE, Sham. **Sistemas de banco de dados**. 7. ed. São Paulo: Pearson, c2019. E-book. ISBN 9788543025001._
+**[1.3]** - CORMEN, Thomas H. et al. **Algoritmos: teoria e prática**. Rio de Janeiro, RJ: Elsevier, Campus, c2012. xvi, 926 p. ISBN 9788535236996.
 
-**[1.2]** - _COPPIN, Ben. **Inteligência artificial**. Rio de Janeiro, RJ: LTC, c2010. E-book. ISBN 978-85-216-2936-8._
+**[1.4]** - SUTHERLAND, Jeffrey Victor. **Scrum: a arte de fazer o dobro do trabalho na metade do tempo**. 2. ed. rev. São Paulo, SP: Leya, 2016. 236, [4] p. ISBN 9788544104514.
 
-**[1.3]** - _CORMEN, Thomas H. et al. **Algoritmos: teoria e prática**. Rio de Janeiro, RJ: Elsevier, Campus, c2012. xvi, 926 p. ISBN 9788535236996._
+**[1.5]** - RUSSELL, Stuart J.; NORVIG, Peter. **Inteligência artificial**. Rio de Janeiro: Elsevier, c2013. xxi, 988 p. ISBN 9788535237016.
 
-**[1.4]** - _SUTHERLAND, Jeffrey Victor. **Scrum: a arte de fazer o dobro do trabalho na metade do tempo**. 2. ed. rev. São Paulo, SP: Leya, 2016. 236, [4] p. ISBN 9788544104514._
+**[1.6]** - NIELSEN, Jakob. **Usabilidade na web: projetando websites com qualidade**. Rio de Janeiro: Campus, 2000. ISBN 8535206644. (Referência adicionada para fundamentar a interface e UX).
 
+<<<<<<< HEAD
 **[1.5]** - _RUSSELL, Stuart J.; NORVIG, Peter. **Inteligência artificial**. Rio de Janeiro: Elsevier, c2013. xxi, 988 p. ISBN 9788535237016._
 
 **[1.6]** - _SOCIEDADE BRASILEIRA DE COMPUTAÇÃO. Biblioteca Digital da Sociedade 
@@ -56,3 +57,16 @@ https://spincare.com.br/?form=MG0AV3. Acesso em: 1 dez. 2024.
 **[3.0]** - _VISUAL STUDIO CODE. VS Code – Code Editing. Redefined. Microsoft Corporation, 2025. Disponível em: https://code.visualstudio.com/. Acesso em: 25 fev. 2025.
 
 **[3.1]** - _W3SCHOOLS. HTML, CSS e JavaScript Tutorials. W3Schools, 2025. Disponível em: https://www.w3schools.com/. Acesso em: 25 fev. 2025.
+=======
+**[1.7]** - VYGOTSKY, Lev S. **A formação social da mente**. 6. ed. São Paulo: Martins Fontes, 1998. (Referência teórica fundamental sobre aprendizado colaborativo e interação social, base do "Brainly" e do PUC Integra).
+
+**[1.8]** - KRUG, Steve. **Não me faça pensar: uma abordagem de bom senso à usabilidade na web**. 3. ed. Rio de Janeiro: Alta Books, 2014.
+
+## Referências Tecnológicas (Documentação)
+
+**[2.1]** - ORACLE. **MySQL 8.0 Reference Manual**. Disponível em: <https://dev.mysql.com/doc/refman/8.0/en/>. Acesso em: 28 nov. 2025.
+
+**[2.2]** - VMWARE. **Spring Boot Documentation**. Disponível em: <https://docs.spring.io/spring-boot/docs/current/reference/html/>. Acesso em: 28 nov. 2025.
+
+**[2.3]** - MOZILLA DEVELOPER NETWORK (MDN). **Web technology for developers (HTML, CSS, JavaScript)**. Disponível em: <https://developer.mozilla.org/en-US/>. Acesso em: 28 nov. 2025.
+>>>>>>> upstream/main
