@@ -43,11 +43,7 @@ Este documento fornece as instruções resumidas para instalar as dependências 
 <li><a href="docs/2-Especificação.md"> Especificação do Projeto</a></li>
 <li><a href="docs/3-Modelagem-Processos-Negócio.md"> Modelagem dos Processos de Negocio</a></li>
 <li><a href="docs/4-Projeto-Solucao.md"> Projeto da solução</a></li>
-<<<<<<< HEAD
 <li><a href="docs/5-Planejamento-Projeto.md"> Gerenciamento do Projeto</a></li>
-=======
-<li><a href="docs/5-Planejamento-Projeto.md"> Planejamento do Projeto</a></li>
->>>>>>> upstream/main
 <li><a href="docs/6-Interface-Sistema.md"> Interface do Sistema</a></li>
 <li><a href="docs/7-Conclusão.md"> Conclusão</a></li>
 <li><a href="docs/8-Referências.md"> Referências</a></li>
@@ -59,11 +55,7 @@ Este documento fornece as instruções resumidas para instalar as dependências 
 
 # Apresentação
 
-<<<<<<< HEAD
 <li><a href="docs/Apresentaçãodasolução.md"> Apresentação da solução</a></li>
-=======
-<li><a href="docs/apresentacao/README.md"> Apresentação da solução</a></li>
->>>>>>> upstream/main
 
 
 ## Histórico de versões
