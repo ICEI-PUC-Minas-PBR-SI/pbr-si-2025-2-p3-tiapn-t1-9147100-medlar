@@ -1,3 +1,14 @@
+# Código-fonte do projeto
+
+
+Aqui devem ficar os arquivos-fonte do projeto: HTML, CSS, Javascript, imagens, e outros necessários para o 
+funcionamento do sistema.
+
+
+<li><a href="/src"> Código Fonte</a></li>
+
+---
+
 # Medlar - Atualização de Funcionalidades
 
 Este projeto contém as atualizações solicitadas para o sistema Medlar, incluindo:
@@ -74,13 +85,4 @@ CREATE TABLE IF NOT EXISTS agendamento (
 | `public/html/agenda-profissionais.html` | Ajustado para usar uma lista dinâmica (`<ul id="appointments-list">`). |
 | `public/html/agenda-paciente.html` | Ajustado para usar uma lista dinâmica (`<ul id="appointments-list">`). |
 =======
-
-# Código-fonte do projeto
-
-
-Aqui devem ficar os arquivos-fonte do projeto: HTML, CSS, Javascript, imagens, e outros necessários para o 
-funcionamento do sistema.
-
-
-<li><a href="/src"> Código Fonte</a></li>
 
