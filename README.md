@@ -58,12 +58,53 @@ Este documento fornece as instruções resumidas para instalar as dependências 
 <li><a href="docs/Apresentaçãodasolução.md"> Apresentação da solução</a></li>
 
 
-## Histórico de versões
+# 📜 Histórico de Versões do Sistema Medlar
 
-* 0.1.1
-    * CHANGE: Atualização das documentações. Código permaneceu inalterado.
-* 0.1.0
-    * Implementação da funcionalidade X pertencente ao processo P.
-* 0.0.1
-    * Trabalhando na modelagem do processo de negócio.
+## ✨ Versão 1.5.0: Lançamento Principal (Major Release)
+
+**Status:** Lançamento Completo
+**Foco:** Implementação da interface completa e processos de negócio essenciais.
+
+Esta versão representa o marco de lançamento do sistema **Medlar**, entregando todas as funcionalidades centrais para a gestão de atendimentos de saúde.
+
+### **Principais Funcionalidades (Features)**
+
+*   **Autenticação e Acesso:** Implementação completa dos fluxos de **Login** e **Cadastro** para Pacientes e Profissionais.
+*   **Gestão de Profissionais:**
+    *   Desenvolvimento do **Cadastro Detalhado de Profissionais**.
+    *   Criação da **Tela de Perfil Público** para visibilidade e apresentação.
+*   **Busca Inteligente:** Funcionalidade de **Busca de Profissionais** com **Filtros Avançados** (especialidade, localização, preço, etc.) para otimizar a conexão.
+*   **Agendamento:** Fluxo completo de **Solicitação de Atendimento** e agendamento de consultas.
+*   **Experiência do Usuário (UX):** Criação de **Agendas Dedicadas** com visões otimizadas para Pacientes e Profissionais.
+
+---
+
+## 📝 Versão 0.1.1: Refinamento da Documentação
+
+**Status:** Documentação e Modelagem
+**Foco:** Qualidade e clareza da documentação do projeto.
+
+*   **Revisão de Processos:** Atualização da documentação de **Modelagem dos Processos de Negócio** (Análise **AS IS** e Proposta **TO BE**).
+*   **Interface Preliminar:** Inclusão da seção de **Interface do Sistema** com telas preliminares, fornecendo uma visão antecipada do produto.
+
+---
+
+## 💻 Versão 0.1.0: Início da Implementação
+
+**Status:** Desenvolvimento Inicial
+**Foco:** Codificação das funcionalidades base.
+
+*   **Acesso:** Implementação da funcionalidade de **Acesso ao Sistema (Login)**.
+*   **Cadastro:** Início da implementação do fluxo de **Cadastro de Usuários (Pacientes)**.
+
+---
+
+## 💡 Versão 0.0.1: Modelagem e Análise Inicial
+
+**Status:** Concepção e Planejamento
+**Foco:** Definição do escopo e arquitetura inicial.
+
+*   **Análise AS IS:** Definição e análise da situação atual dos processos de Cadastro de Pacientes/Profissionais e Busca de Profissionais.
+*   **Proposta TO BE:** Elaboração da proposta de solução para o sistema **Medlar**, definindo o escopo e a arquitetura inicial.
+
 
