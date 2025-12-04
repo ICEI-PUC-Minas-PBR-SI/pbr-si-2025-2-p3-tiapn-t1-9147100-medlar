@@ -1,0 +1,255 @@
+/* Estilos básicos (baseados em cadastro.css para consistência) */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Cor principal da Medlar: Verde (#28a745) */
+:root {
+    --cor-primaria: #28a745;
+    --cor-primaria-hover: #1e7e34;
+}
+
+/* NOVO CSS DA NAVBAR (Conforme a imagem) */
+/* Cores baseadas na imagem */
+:root {
+    --cor-logo-verde: #4CAF50; /* Verde da logo (aproximado) */
+    --cor-texto-principal: #333333; /* Texto MEDLAR (aproximado) */
+    --cor-texto-secundario: #192A56; /* Texto medlar (aproximado) */
+    --cor-link-login: #6C757D; /* Texto Login/Registro (aproximado) */
+    --cor-borda-inferior: #E0E0E0; /* Borda sutil inferior (aproximado) */
+}
+
+/* Estilo da Navbar */
+.navbar-medlar {
+    background-color: #FFFFFF; /* Fundo branco */
+    padding: 15px 0; /* Espaçamento vertical */
+    border-bottom: 1px solid var(--cor-borda-inferior); /* Borda sutil inferior */
+}
+
+.navbar-container {
+    max-width: 1200px; /* Largura máxima do conteúdo */
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between; /* Alinha logo à esquerda e link à direita */
+    align-items: center;
+}
+
+/* Estilo da Marca (Logo + Nome) */
+.navbar-brand-medlar {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--cor-texto-principal);
+}
+
+/* Wrapper para o ícone e o texto 'medlar' */
+.logo-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 15px;
+}
+
+/* Estilo do Ícone (Placeholder) */
+/* Nota: Como a imagem é um ícone complexo, estamos usando um placeholder. 
+   O usuário deve substituir 'logo-medlar.png' no HTML pela imagem real. */
+.logo-icon {
+    width: 70px; /* Tamanho do ícone (Aumentado) */
+    height: 70px;
+    /* Se o usuário usar a imagem real, pode remover este estilo de fundo */
+}
+
+/* Texto 'medlar' abaixo do ícone */
+.logo-text-small {
+    font-size: 0.75em;
+    font-weight: bold;
+    color: var(--cor-texto-secundario);
+    margin-top: 2px;
+}
+
+/* Texto 'MEDLAR' ao lado do ícone */
+.logo-text-large {
+    font-size: 1.5em; /* Diminuído */
+    font-weight: 900; /* Extra bold */
+    color: var(--cor-texto-principal);
+    letter-spacing: 0.5px;
+}
+
+/* Estilo do Link de Login/Registro */
+.login-link {
+    color: var(--cor-link-login);
+    text-decoration: none;
+    font-size: 1em;
+    padding: 8px 12px;
+    transition: color 0.2s;
+}
+
+.login-link:hover {
+    color: var(--cor-texto-principal); /* Escurece um pouco no hover */
+}
+
+/* MAIN CONTENT */
+main {
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 75px); /* Ajuste para centralizar, considerando o navbar */
+}
+
+/* Container de Login */
+.login-container {
+    max-width: 400px;
+    width: 100%;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.login-title {
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* Formulário e Grupos */
+.login-form {
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+/* Botão Primário */
+.btn-primary {
+    width: 100%;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    background-color: var(--cor-primaria);
+    color: white;
+    margin-top: 15px;
+}
+
+.btn-primary:hover {
+    background-color: var(--cor-primaria-hover);
+}
+
+/* Links Adicionais */
+.forgot-password-link {
+    display: block;
+    text-align: right;
+    margin-top: 10px;
+}
+
+.forgot-password-link a {
+    color: var(--cor-primaria);
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.forgot-password-link a:hover {
+    text-decoration: underline;
+}
+
+.register-link {
+    margin-top: 25px;
+    color: #666;
+}
+
+.register-link .link {
+    color: var(--cor-primaria);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register-link .link:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para alternância de telas (Login e Esqueci a Senha) */
+.tela {
+    display: none; /* Oculta por padrão */
+}
+
+.tela.ativa {
+    display: block; /* Exibe a tela ativa */
+}
+
+.instrucao {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 0.95em;
+}
+
+
+/* ==================================== */
+/* ANIMAÇÕES ADICIONADAS */
+/* ==================================== */
+
+/* Keyframes para animação de entrada */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animação de entrada para o container de login */
+.login-container.ativa {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Animação de foco para os campos de formulário */
+.form-input {
+    /* Mantém as propriedades existentes e adiciona a transição */
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-input:focus {
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25); /* Sombra verde sutil */
+    outline: none;
+}
+
+/* Animação de hover para o botão primário */
+.btn-primary {
+    /* Mantém as propriedades existentes e adiciona a transição */
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.btn-primary:hover {
+    transform: scale(1.01); /* Efeito de leve crescimento */
+}

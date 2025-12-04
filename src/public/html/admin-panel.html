@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Admin - Aprovação de Usuários</title>
+
+    <!-- CSS separado -->
+    <link rel="stylesheet" href="/public/css/admin.css">
+</head>
+
+<body>
+
+    <h1>Painel Admin - Aprovação de Usuários</h1>
+
+    <div class="container">
+        <h2>Usuários Pendentes</h2>
+
+        <table id="tabela">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>E-mail</th>
+                    <th>Tipo</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="listaPendentes">
+                <!-- users -->
+            </tbody>
+        </table>
+
+        <p id="mensagem" class="msg"></p>
+    </div>
+
+    <!-- JS separado -->
+    <script src="/public/js/admin-panel.js"></script>
+    <script src="/public/js/admin.js"></script>
+</body>
+</html>

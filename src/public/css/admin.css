@@ -1,0 +1,71 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f4f7;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.10);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: #0052cc;
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+    background: #f0f6ff;
+}
+
+.btn {
+    padding: 7px 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+}
+
+.btn-aprovar {
+    background: #22bb33;
+}
+
+.btn-rejeitar {
+    background: #cc0000;
+}
+
+.msg {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.msg.ok {
+    color: green;
+}
+
+.msg.error {
+    color: red;
+}

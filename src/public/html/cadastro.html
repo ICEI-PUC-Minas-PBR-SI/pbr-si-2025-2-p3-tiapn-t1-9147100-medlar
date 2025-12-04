@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca de Profissionais - Medlar</title>
+    <link rel="stylesheet" href="/public/css/cadastro.css">
+</head>
+<body>
+    <nav>
+        <div class="navbar container">
+            <a href="/public/html/index.html" class="navbar-brand">
+                <img src="/public/img/medlar.jpg" alt="Logo Medlar" class="navbar-logo">
+                Medlar
+            </a>
+
+            <ul class="navbar-menu">
+                <li><a href="/public/html/index.html" class="active">Início</a></li>
+                <li><a href="/public/html/login.html">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div id="alerta" style="display:none;"></div>
+
+        <main>
+            <div class="container">
+                <div id="tela-inicio" class="tela ativa">
+                    <div class="card card-com-imagem">
+                        <div class="card-conteudo">
+                            <h1>Cadastro Medlar</h1>
+                            <p>Bem-vindo ao Sistema de Cadastro da Medlar. Selecione o tipo de cadastro que deseja realizar:</p>
+
+                            <div class="form-group" style="margin-top: 30px;">
+                                <label for="tipo_cadastro">Tipo de Cadastro:</label>
+                                <select id="tipo_cadastro" name="tipo_cadastro" required>
+                                    <option value="profissional" selected>Profissional</option>
+                                    <option value="paciente">Paciente</option>
+                                </select>
+                            </div>
+
+                            <div class="botoes" style="justify-content: flex-start; margin-top: 30px;">
+                                <button class="btn btn-primary" id="btn-iniciar-cadastro" type="button">Iniciar Cadastro</button>
+                            </div>
+                        </div>
+                        <div class="card-imagem">
+                            <div class="card-imagem-box">👨‍⚕️</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="tela-profissional" class="tela">
+                    <div class="card">
+                        <h1>Cadastro de Profissional</h1>
+                        <p class="etapa-info">Etapa 1 de 3</p>
+
+                        <form id="form-profissional" novalidate>
+                            <fieldset>
+                                <legend>Dados Pessoais</legend>
+
+                                <div class="form-group">
+                                    <label for="nome_completo_prof">Primeiro Nome: <span class="obrigatorio">*</span></label>
+                                    <input type="text" id="nome_completo_prof" name="nome_completo_prof" placeholder="Primeiro Nome"
+                                        required minlength="3" autocomplete="given-name" />
+                                    <span class="erro-msg" id="erro-nome-prof" aria-live="polite"></span>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="sobrenome_prof">Sobrenome: <span class="obrigatorio">*</span></label>
+                                        <input type="text" id="sobrenome_prof" name="sobrenome_prof" placeholder="Sobrenome"
+                                            required minlength="2" autocomplete="family-name" />
+                                        <span class="erro-msg" id="erro-sobrenome-prof" aria-live="polite"></span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="registro_profissional">CRM/COREN: <span class="obrigatorio">*</span></label>
+                                        <input
+                                            type="text"
+                                            id="registro_profissional"
+                                            name="registro_profissional"
+                                            placeholder="Ex: COREN-MG-123456"
+                                            required
+                                            autocomplete="off"
+                                        />
+                                        <span class="erro-msg" id="erro-registro-prof" aria-live="polite"></span>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="cpf_prof">CPF: <span class="obrigatorio">*</span></label>
+                                        <input type="text" id="cpf_prof" name="cpf_prof" placeholder="000.000.000-00"
+                                            required inputmode="numeric" maxlength="14"
+                                            pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" autocomplete="off" />
+                                        <span class="erro-msg" id="erro-cpf-prof" aria-live="polite"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="data_nascimento_prof">Data de Nascimento: <span class="obrigatorio">*</span></label>
+                                        <input type="text" id="data_nascimento_prof" name="data_nascimento_prof"
+                                            placeholder="dd/mm/aaaa" maxlength="10" inputmode="numeric"
+                                            pattern="\d{2}/\d{2}/\d{4}" required />
+                                        <span class="erro-msg" id="erro-nascimento-prof" aria-live="polite"></span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email_prof">E-mail: <span class="obrigatorio">*</span></label>
+                                    <input type="email" id="email_prof" name="email_prof" placeholder="seu.email@exemplo.com"
+                                        required autocomplete="email" />
+                                    <span class="erro-msg" id="erro-email-prof" aria-live="polite"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="telefone_prof">Telefone: <span class="obrigatorio">*</span></label>
+                                    <input type="text" id="telefone_prof" name="telefone_prof" placeholder="(XX) XXXXX-XXXX"
+                                        required inputmode="numeric" maxlength="15" autocomplete="tel-national" />
+                                    <span class="erro-msg" id="erro-telefone-prof" aria-live="polite"></span>
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+                                <legend>Endereço</legend>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="cep_prof">CEP: <span class="obrigatorio">*</span></label>
+                                        <input type="text" id="cep_prof" name="cep_prof" placeholder="Digite o CEP (8 dígitos)"
+                                            required inputmode="numeric" maxlength="8" minlength="8" autocomplete="postal-code"
+                                            pattern="\d{8}" />
+                                        <span class="erro-msg" id="erro-cep-prof" aria-live="polite"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cidade_prof">Cidade/UF: <span class="obrigatorio">*</span></label>
+                                        <input type="text" id="cidade_prof" name="cidade_prof" placeholder="Cidade/UF"
+                                            required autocomplete="address-level2" />
+                                        <span class="erro-msg" id="erro-cidade-prof" aria-live="polite"></span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="bairro_prof">Bairro: <span class="obrigatorio">*</span></label>
+                                    <input type="text" id="bairro_prof" name="bairro_prof" placeholder="Seu bairro"
+                                        required autocomplete="address-level3" />
+                                    <span class="erro-msg" id="erro-bairro-prof" aria-live="polite"></span>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group" style="flex: 1 1 70%;">
+                                        <label for="endereco_prof">Rua: <span class="obrigatorio">*</span></label>
+                                        <input type="text" id="endereco_prof" name="endereco_prof" placeholder="Rua, Av, etc."
+                                            required autocomplete="address-line1" />
+                                        <span class="erro-msg" id="erro-endereco-prof" aria-live="polite"></span>
+                                    </div>
+                                    <div class="form-group" style="flex: 1 1 30%; max-width: 180px;">
+                                        <label for="numero_prof">Número: <span class="obrigatorio">*</span></label>
+                                        <input type="text" id="numero_prof" name="numero_prof" placeholder="Nº"
+                                            required inputmode="numeric" maxlength="10" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="complemento_prof">Complemento:</label>
+                                    <input type="text" id="complemento_prof" name="complemento_prof" placeholder="Apto, Bloco, etc. (opcional)"
+                                        autocomplete="address-line2" />
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+                                <legend>Experiência Profissional</legend>
+                                <div class="form-group">
+                                    <label for="passagens_profissionais">Passagens Profissionais: <span class="obrigatorio">*</span></label>
+                                    <textarea id="passagens_profissionais" name="passagens_profissionais"
+                                            placeholder="Descreva suas experiências profissionais"
+                                            required rows="4"></textarea>
+                                    <span class="erro-msg" id="erro-passagens-prof" aria-live="polite"></span>
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+                                <legend>Área de Atendimento</legend>
+                                <div class="form-group">
+                                    <label for="areas_atendimento">Descreva sua área de atuação: <span class="obrigatorio">*</span></label>
+                                    <textarea id="areas_atendimento" name="areas_atendimento"
+                                            placeholder="Descreva sua área de atuação"
+                                            required rows="4"></textarea>
+                                    <span class="erro-msg" id="erro-areas-prof" aria-live="polite"></span>
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+                                <legend>Documentos</legend>
+
+                                <div class="form-group">
+                                    <label>Envie seus documentos: <span class="obrigatorio">*</span></label>
+
+                                    <div class="documentos-upload">
+                                        
+                                        <!-- Documento 1 -->
+                                        <div class="documento-item" onclick="document.getElementById('doc1_prof').click()">
+                                            <div class="documento-item-icon">📄</div>
+                                            <span id="doc1_nome" class="nome-arquivo"></span>
+                                        </div>
+
+                                        <!-- Documento 2 -->
+                                        <div class="documento-item" onclick="document.getElementById('doc2_prof').click()">
+                                            <div class="documento-item-icon">📄</div>
+                                            <span id="doc2_nome" class="nome-arquivo"></span>
+                                        </div>
+
+                                        <!-- Documento 3 (Foto) -->
+                                        <div class="documento-item" onclick="document.getElementById('doc3_prof').click()">
+                                            <div class="documento-item-icon">👤</div>
+                                            <span id="doc3_nome" class="nome-arquivo"></span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Inputs reais (ocultos) -->
+                                    <input type="file" required id="doc1_prof" name="documento_rg" style="display: none;" accept=".pdf,.jpg,.jpeg,.png" onchange="mostrarNomeArquivo(event, 'doc1_nome')">
+                                    <input type="file" required id="doc2_prof" name="documento_cpf" style="display: none;" accept=".pdf,.jpg,.jpeg,.png" onchange="mostrarNomeArquivo(event, 'doc2_nome')">
+                                    <input type="file" required id="doc3_prof" name="foto_perfil" style="display: none;" accept=".pdf,.jpg,.jpeg,.png" onchange="mostrarNomeArquivo(event, 'doc3_nome')">
+
+                                    <!-- Mensagem de erro específica dos documentos -->
+                                    <span class="erro-msg" id="erro-docs-prof" aria-live="polite"></span>
+                                </div>
+                            </fieldset>    
+
+                            <fieldset>
+                                <legend>Dados de Acesso</legend>
+                                <div class="form-group">
+                                    <label for="senha_prof">Senha: <span class="obrigatorio">*</span></label>
+                                    <input type="password" id="senha_prof" name="senha_prof" placeholder="Crie uma senha segura"
+                                        required minlength="6" autocomplete="new-password" />
+                                    <span class="erro-msg" id="erro-senha-prof" aria-live="polite"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="confirma_senha_prof">Confirme a Senha: <span class="obrigatorio">*</span></label>
+                                    <input type="password" id="confirma_senha_prof" name="confirma_senha_prof" placeholder="Confirme sua senha"
+                                        required minlength="6" autocomplete="new-password" />
+                                    <span class="erro-msg" id="erro-confirma-senha-prof" aria-live="polite"></span>
+                                </div>
+
+                                <input type="file" id="comprovante_registro" name="comprovante_registro"
+                                    style="display:none;" accept=".pdf,.jpg,.jpeg,.png" />
+                                <span class="erro-msg" id="erro-documentos-prof" aria-live="polite"></span>
+                            </fieldset>
+
+                            <div class="botoes">
+                                <button type="button" class="btn btn-secondary" onclick="mostrarTela('tela-inicio')">Voltar</button>
+                                <button type="button" class="btn btn-primary" onclick="validarFormularioProfissional()">Enviar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div id="tela-paciente" class="tela">
+                    <div class="card">
+                        <h1>Cadastro de Paciente</h1>
+                        <p class="etapa-info">Etapa 1 de 3</p>
+
+                        <form id="form-paciente" novalidate>
+                            <fieldset>
+                                <legend>Dados Pessoais</legend>
+
+                                <div class="form-group">
+                                    <label for="nome_completo_pac">Nome Completo: <span class="obrigatorio">*</span></label>
+                                    <input type="text" id="nome_completo_pac" name="nome_completo_pac" placeholder="Seu nome completo"
+                                        required minlength="3" autocomplete="name" />
+                                    <span class="erro-msg" id="erro-nome-pac" aria-live="polite"></span>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="cpf_pac">CPF: <span class="obrigatorio">*</span></label>
+                                        <input type="text" id="cpf_pac" name="cpf_pac" placeholder="000.000.000-00"
+                                            required inputmode="numeric" maxlength="14"
+                                            pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" autocomplete="off" />
+                                        <span class="erro-msg" id="erro-cpf-pac" aria-live="polite"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="data_nascimento_pac">Data de Nascimento: <span class="obrigatorio">*</span></label>
+                                        <input type="text" id="data_nascimento_pac" name="data_nascimento_pac"
+                                            placeholder="dd/mm/aaaa" maxlength="10" inputmode="numeric"
+                                            pattern="\d{2}/\d{2}/\d{4}" required />
+                                        <span class="erro-msg" id="erro-nascimento-pac" aria-live="polite"></span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email_pac">E-mail: <span class="obrigatorio">*</span></label>
+                                    <input type="email" id="email_pac" name="email_pac" placeholder="seu.email@exemplo.com"
+                                        required autocomplete="email" />
+                                    <span class="erro-msg" id="erro-email-pac" aria-live="polite"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="telefone_pac">Telefone: <span class="obrigatorio">*</span></label>
+                                    <input type="text" id="telefone_pac" name="telefone_pac" placeholder="(XX) XXXXX-XXXX"
+                                        required inputmode="numeric" maxlength="15" autocomplete="tel-national" />
+                                    <span class="erro-msg" id="erro-telefone-pac" aria-live="polite"></span>
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+                                <legend>Endereço</legend>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="cep_pac">CEP: <span class="obrigatorio">*</span></label>
+                                        <input type="text" id="cep_pac" name="cep_pac" placeholder="Digite o CEP (8 dígitos)"
+                                            required inputmode="numeric" maxlength="8" minlength="8" autocomplete="postal-code"
+                                            pattern="\d{8}" />
+                                        <span class="erro-msg" id="erro-cep-pac" aria-live="polite"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cidade_pac">Cidade/UF: <span class="obrigatorio">*</span></label>
+                                        <input type="text" id="cidade_pac" name="cidade_pac" placeholder="Cidade/UF"
+                                            required autocomplete="address-level2" />
+                                        <span class="erro-msg" id="erro-cidade-pac" aria-live="polite"></span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="bairro_pac">Bairro: <span class="obrigatorio">*</span></label>
+                                    <input type="text" id="bairro_pac" name="bairro_pac" placeholder="Seu bairro"
+                                        required autocomplete="address-level3" />
+                                    <span class="erro-msg" id="erro-bairro-pac" aria-live="polite"></span>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group" style="flex: 1 1 70%;">
+                                        <label for="endereco_pac">Rua: <span class="obrigatorio">*</span></label>
+                                        <input type="text" id="endereco_pac" name="endereco_pac" placeholder="Rua, Av, etc."
+                                            required autocomplete="address-line1" />
+                                        <span class="erro-msg" id="erro-endereco-pac" aria-live="polite"></span>
+                                    </div>
+                                    <div class="form-group" style="flex: 1 1 30%; max-width: 180px;">
+                                        <label for="numero_pac">Número: <span class="obrigatorio">*</span></label>
+                                        <input type="text" id="numero_pac" name="numero_pac" placeholder="Nº"
+                                            required inputmode="numeric" maxlength="10" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="complemento_pac">Complemento:</label>
+                                    <input type="text" id="complemento_pac" name="complemento_pac" placeholder="Apto, Bloco, etc. (opcional)"
+                                        autocomplete="address-line2" />
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+                                <legend>Histórico Médico Resumido</legend>
+                                <div class="form-group">
+                                    <label for="historico_medico_pac">Principais Condições/Alergias: <span class="obrigatorio">*</span></label>
+                                    <textarea id="historico_medico_pac" name="historico_medico_pac"
+                                            placeholder="Descreva brevemente suas principais condições médicas ou alergias"
+                                            required rows="4"></textarea>
+                                    <span class="erro-msg" id="erro-historico-pac" aria-live="polite"></span>
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+                                <legend>Dados de Acesso</legend>
+                                <div class="form-group">
+                                    <label for="senha_pac">Senha: <span class="obrigatorio">*</span></label>
+                                    <input type="password" id="senha_pac" name="senha_pac" placeholder="Crie uma senha segura"
+                                        required minlength="6" autocomplete="new-password" />
+                                    <span class="erro-msg" id="erro-senha-pac" aria-live="polite"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="confirma_senha_pac">Confirme a Senha: <span class="obrigatorio">*</span></label>
+                                    <input type="password" id="confirma_senha_pac" name="confirma_senha_pac" placeholder="Confirme sua senha"
+                                        required minlength="6" autocomplete="new-password" />
+                                    <span class="erro-msg" id="erro-confirma-senha-pac" aria-live="polite"></span>
+                                </div>
+                            </fieldset>
+
+                            <div class="botoes">
+                                <button type="button" class="btn btn-secondary" onclick="mostrarTela('tela-inicio')">Voltar</button>
+                                <button type="button" class="btn btn-primary" onclick="validarFormularioPaciente()">Enviar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div id="tela-validacao" class="tela">
+                    <div class="card">
+                        <h1>Validação de Dados</h1>
+                        <p class="etapa-info">Etapa 2 de 3</p>
+                        <div class="status-validacao">
+                            <div class="spinner"></div>
+                            <p id="status_validacao">Em validação</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="tela-notificacao" class="tela">
+                    <div class="card">
+                        <h1>Notificação de Cadastro</h1>
+                        <p class="etapa-info">Etapa 3 de 3</p>
+                        <div class="sucesso-box">
+                            <div class="sucesso-icone">✓</div>
+                            <p id="mensagem_notificacao">Seu cadastro foi concluído com sucesso!</p>
+                            <p class="data-cadastro">Data e Hora: <span id="data_cadastro"></span></p>
+                        </div>
+                        <div class="botoes">
+                            <button class="btn btn-primary" onclick="finalizarProcesso()">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="tela-fim" class="tela">
+                    <div class="card">
+                        <h1>Processo Finalizado</h1>
+                        <div class="fim-box">
+                            <p id="status_final">Cadastro Finalizado</p>
+                            <p class="mensagem-fim">Obrigado por utilizar o sistema de cadastro da Medlar!</p>
+                        </div>
+                        <div class="botoes">
+                            <button class="btn btn-primary" onclick="reiniciarProcesso()">Voltar ao Início</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <script defer src="/public/js/cadastro.js"></script>
+    </div>
+</body>
+</html>

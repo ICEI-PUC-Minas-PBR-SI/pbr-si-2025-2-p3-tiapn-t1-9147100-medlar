@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca de Profissionais - Medlar</title>
+    <link rel="stylesheet" href="/public/css/styles.css">
+    <link rel="stylesheet" href="/public/css/profile-menu.css">
+</head>
+<body>
+    <div class="container">
+        <!-- ===== Cabeçalho ===== -->
+        <header class="header">
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="/public/img/medlar.jpg" alt="Logo" width="120">
+                </div>
+                <span class="logo-text">Medlar</span>
+            </div>
+
+            <!-- Navegação padrão -->
+            <nav class="nav">
+                <a href="/public/html/buscar-profissionais.html" class="nav-link active">Início</a>
+                <a href="/public/html/agenda-paciente.html" class="nav-link">Agenda</a>
+                <!-- Menu de Perfil do Usuário -->
+                <div class="profile-menu-container">
+                    <div class="profile-avatar" id="profile-avatar">
+                        P
+                    </div>
+                    <div class="profile-dropdown" id="profile-dropdown">
+                        <div class="profile-info">
+                            <div class="profile-info-avatar">P</div>
+                            <div class="profile-info-text">
+                                <p class="profile-name">Usuário Logado</p>
+                                <p class="profile-email">usuario@medlar.com</p>
+                            </div>
+                        </div>
+                        <a href="#" class="dropdown-item">
+                            <span class="icon">👤</span> Ver Perfil
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <span class="icon">⚙️</span> Configurações
+                        </a>
+                        <a href="/public/html/login.html" class="dropdown-item logout">
+                            <span class="icon">🚪</span> Sair
+                        </a>
+                    </div>
+                </div>
+                <!-- Fim do Menu de Perfil -->
+            </nav>
+        </header>
+
+        <!-- ===== Conteúdo principal ===== -->
+        <main class="main-content">
+            <div class="search-layout">
+                <!-- ===== Filtros laterais ===== -->
+                <aside class="filters-sidebar">
+                    <!-- ===== Especialidade ===== -->
+                    <div class="filter-group">
+                        <h3 class="filter-title">Especialidade</h3>
+                        <select id="filtro-especialidade" class="filter-select">
+                            <option value="">Todos</option>
+                            <option>Enfermagem</option>
+                            <option>Enfermagem domiciliar</option>
+                            <option>Clínico Geral</option>
+                            <option>Cardiologia</option>
+                            <option>Geriatria</option>
+                            <option>Fisioterapia</option>
+                            <option>Fisioterapia respiratória</option>
+                            <option>Nutrição</option>
+                            <option>Nutrição clínica</option>
+                            <option>Psicologia clínica</option>
+                            <option>Psiquiatria</option>
+                            <option>Fonoaudiologia</option>
+                            <option>Odontologia</option>
+                            <option>Dermatologia</option>
+                            <option>Pediatria</option>
+                            <option>Neurologia</option>
+                            <option>Endocrinologia</option>
+                            <option>Ginecologia</option>
+                            <option>Oftalmologia</option>
+                            <option>Pneumologia</option>
+                            <option>Gastroenterologia</option>
+                            <option>Cirurgia Geral</option>
+                        </select>
+                    </div>
+
+                    <!-- ===== Localização (cidade/ bairro) ===== -->
+                    <div class="filter-group">
+                        <h3 class="filter-title">Localização</h3>
+                        <input
+                            type="text"
+                            id="filtro-localizacao"
+                            placeholder="Ex: Belo Horizonte, Ibirité"
+                            class="filter-input"
+                        />
+                    </div>
+
+                    <!-- ===== Disponibilidade ===== -->
+                    <div class="filter-group">
+                        <h3 class="filter-title">Disponibilidade</h3>
+                        <select id="filtro-disponibilidade" class="filter-select">
+                            <option value="qualquer">Qualquer</option>
+                            <option value="hoje">Hoje</option>
+                            <option value="semana">Esta semana</option>
+                            <option value="mes">Este mês</option>
+                        </select>
+                    </div>
+
+                    <!-- ===== Preço ===== -->
+                    <div class="filter-group">
+                        <h3 class="filter-title">Preço</h3>
+                        <div class="price-range">
+                            <input
+                                type="range"
+                                min="29"
+                                max="70"
+                                value="50"
+                                id="filtro-preco"
+                                class="price-slider"
+                            />
+                            <div class="price-values">
+                                <span>R$29</span>
+                                <span>R$70</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn-primary filter-btn">Buscar</button>
+                </aside>
+
+                <div class="results-section"></div>
+            </div>
+        </main>
+
+        <!-- ===== Modal de Perfil ===== -->
+        <div class="modal-overlay" id="profileModal">
+            <div class="modal">
+                <div class="modal-header">
+                    <h2 class="modal-title">Perfil do Profissional</h2>
+                    <button class="close-btn" id="closeModal">&times;</button>
+                </div>
+                <div class="modal-photo">
+                    <img id="modalFoto" src="" alt="Foto do profissional">
+                </div>
+                <div class="modal-info">
+                    <p><strong>Primeiro Nome:</strong> <span id="modalNome"></span></p>
+                    <p><strong>Sobrenome:</strong> <span id="modalSobrenome"></span></p>
+                    <p><strong>Data de Nascimento:</strong> <span id="modalDataNasc"></span></p>
+                    <p><strong>Cidade/Estado:</strong> <span id="modalLocalizacao"></span></p>
+                    <p><strong>CRRM/COREN:</strong> <span id="modalRegistro"></span></p>
+                    <p><strong>E-mail:</strong> <span id="modalEmail"></span></p>
+                    <p><strong>Telefone:</strong> <span id="modalTelefone"></span></p>
+                    <p><strong>Passagens Profissionais:</strong> <span id="modalExperiencia"></span></p>
+                    <p><strong>Descreva sua área de atuação:</strong> <span id="modalDescricao"></span></p>
+                    <p><strong>Avaliação Final:</strong> <span id="modalAvaliacaoFinal"></span></p>
+                </div>
+
+                <!-- Botão Agendar Consulta (mesmo design do btn-primary) -->
+                <div style="margin-top: 20px; text-align: right;">
+                    <a href="/public/html/solicitar-atendimento.html" class="btn-primary">
+                        Agendar Consulta
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script defer src="/public/js/busca.js"></script>
+    <script defer src="/public/js/profile-menu.js"></script>
+</body>
+</html>

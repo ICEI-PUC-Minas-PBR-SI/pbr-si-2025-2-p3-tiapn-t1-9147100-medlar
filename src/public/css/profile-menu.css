@@ -1,0 +1,117 @@
+/* Estilos para o Componente de Perfil de Usuário */
+
+.profile-menu-container {
+    position: relative;
+    /* Para posicionar no canto superior direito, o elemento pai (header) deve ter display: flex e justify-content: space-between, o que parece ser o caso em styles.css */
+    /* Ou, se o header não for flex, podemos usar position: absolute no container, mas vamos tentar o fluxo normal primeiro */
+    margin-left: auto; /* Empurra para a direita se estiver dentro de um flex container */
+    z-index: 1000; /* Garante que o menu fique acima de outros elementos */
+}
+
+/* Estilo do Avatar (a "bolinha") */
+.profile-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #4A7C59; /* Cor de fundo semelhante ao logo/tema */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.2s;
+}
+
+.profile-avatar:hover {
+    opacity: 0.8;
+}
+
+/* Estilo do Menu Dropdown */
+.profile-dropdown {
+    display: none;
+    position: absolute;
+    top: 50px; /* Abaixo do avatar */
+    right: 0;
+    width: 280px; /* Largura do menu */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 10px 0;
+    border: 1px solid #ddd;
+}
+
+.profile-dropdown.show {
+    display: block;
+}
+
+/* Seção de Informações do Perfil (Topo do Dropdown) */
+.profile-info {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.profile-info-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #6c757d; /* Cor de fundo para o avatar maior */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+.profile-name {
+    font-weight: bold;
+    margin: 0;
+    color: #333;
+}
+
+.profile-email {
+    font-size: 12px;
+    color: #666;
+    margin: 0;
+    word-break: break-all;
+}
+
+/* Itens do Menu */
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.2s;
+    font-size: 14px;
+}
+
+.dropdown-item:hover {
+    background-color: #f5f5f5;
+}
+
+.dropdown-item .icon {
+    margin-right: 10px;
+    font-size: 16px;
+    width: 20px; /* Garante alinhamento dos ícones */
+    text-align: center;
+}
+
+/* Estilo específico para o item de Sair (Logout) */
+.dropdown-item.logout {
+    border-top: 1px solid #eee;
+    margin-top: 10px;
+    color: #dc3545; /* Cor de destaque para o botão de sair */
+}
+
+.dropdown-item.logout:hover {
+    background-color: #f8d7da;
+}

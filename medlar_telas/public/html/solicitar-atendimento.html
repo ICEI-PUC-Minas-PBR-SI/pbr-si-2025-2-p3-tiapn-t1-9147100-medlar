@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitar Atendimento - Medlar</title>
+    <link rel="stylesheet" href="/public/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- ===== Cabeçalho ===== -->
+        <header class="header">
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="/public/img/medlar.jpg" alt="Logo" width="120" height="auto">
+                </div>
+                <span class="logo-text">Medlar</span>
+            </div>
+            <nav class="nav">
+                <a href="/public/html/home-paciente.html" class="nav-link">Início</a>
+                <a href="/public/html/agenda-paciente.html" class="nav-link">Agenda</a>
+            </nav>
+        </header>
+
+        <!-- ===== Conteúdo principal ===== -->
+        <main class="main-content">
+            <div class="page-container">
+                <div class="content-section">
+                    <h1 class="page-title">Solicitar atendimento</h1>
+                    
+                    <form class="appointment-form" id="form-agendamento">
+                        <div class="form-group">
+                            <label for="profissional" class="form-label">Profissional</label>
+                            <input
+                                type="text"
+                                id="profissional"
+                                name="profissional"
+                                class="form-input"
+                                value="Sara Fisher"
+                                required
+                                readonly
+                            >
+                        </div>
+
+                        <!-- Serviço (lista com opções de Home Care) -->
+                        <div class="form-group">
+                            <label for="servico" class="form-label">Serviço</label>
+                            <select id="servico" name="servico" class="form-select" required>
+                                <option value="">Selecione um serviço</option>
+
+                                <optgroup label="Enfermagem">
+                                    <option>Curativos simples</option>
+                                    <option>Curativos complexos</option>
+                                    <option>Administração de medicamentos</option>
+                                    <option>Avaliação de sinais vitais</option>
+                                    <option>Retirada de pontos</option>
+                                    <option>Acompanhamento pós-operatório</option>
+                                    <option>Cateterismo urinário</option>
+                                    <option>Aplicação de injeção</option>
+                                    <option>Troca de sonda nasogástrica</option>
+                                </optgroup>
+
+                                <optgroup label="Fisioterapia">
+                                    <option>Fisioterapia motora</option>
+                                    <option>Fisioterapia respiratória</option>
+                                    <option>Reabilitação pós-cirúrgica</option>
+                                    <option>Prevenção de quedas</option>
+                                </optgroup>
+
+                                <optgroup label="Médico">
+                                    <option>Consulta clínica domiciliar</option>
+                                    <option>Acompanhamento de hipertensão</option>
+                                    <option>Acompanhamento de diabetes</option>
+                                    <option>Avaliação geriátrica</option>
+                                    <option>Atendimento pediátrico</option>
+                                </optgroup>
+
+                                <optgroup label="Nutrição">
+                                    <option>Avaliação nutricional</option>
+                                    <option>Planejamento dietético</option>
+                                    <option>Reeducação alimentar</option>
+                                </optgroup>
+
+                                <optgroup label="Psicologia">
+                                    <option>Consulta psicológica</option>
+                                </optgroup>
+
+                                <optgroup label="Outros">
+                                    <option>Fonoaudiologia</option>
+                                    <option>Odontologia domiciliar</option>
+                                    <option>Cuidado paliativo</option>
+                                </optgroup>
+                            </select>
+
+                            <!-- valor do serviço (preenchido via JS se quiser) -->
+                            <p id="valor-servico" class="form-label" style="margin-top: 5px; font-weight: bold;"></p>
+                        </div>
+                        
+                        <!-- Data e horário -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="data" class="form-label">Data</label>
+                                <input
+                                    type="date"
+                                    id="data"
+                                    name="data"
+                                    class="form-input"
+                                    required
+                                >
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="horario" class="form-label">Horário</label>
+                                <select
+                                    id="horario"
+                                    name="horario"
+                                    class="form-select"
+                                    required
+                                >
+                                    <!-- Horários disponíveis serão carregados via JS -->
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Método de pagamento (name="pagamento" para bater com backend) -->
+                            <div class="form-group">
+                                <label for="metodo_pagamento" class="form-label">Método de Pagamento</label>
+                                <select
+                                    id="metodo_pagamento"
+                                    name="pagamento"
+                                    class="form-select"
+                                    required
+                                >
+                                    <option value="" disabled selected>Selecione o método</option>
+                                    <option value="cartao">Cartão de Crédito/Débito</option>
+                                    <option value="pix">PIX</option>
+                                    <option value="dinheiro">Dinheiro na visita</option>
+                                </select>
+                            </div>
+                        
+                        <!-- Botões -->
+                        <div class="form-actions">
+                            <button type="button" class="btn-secondary" onclick="window.history.back()">
+                                Voltar
+                            </button>
+                            <button type="submit" class="btn-primary">
+                                Pagar e Agendar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Lado direito com logo grande -->
+                <div class="icon-section">
+                    <div class="logo-icon">
+                        <img src="/public/img/medlar.jpg" alt="Logo" width="300" height="auto">
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script defer src="/public/js/solicitar-atendimento.js"></script>
+</body>
+</html>

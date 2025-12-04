@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda do Paciente - Medlar</title>
+    <link rel="stylesheet" href="/public/css/styles.css">
+     <link rel="stylesheet" href="/public/css/profile-menu.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                 <div class="logo-icon">
+  <img src="/public/img/medlar.jpg" alt="Logo" width="120" height="auto">
+</div>
+                <span class="logo-text">Medlar</span>
+            </div>
+            <nav class="nav">
+                <a href="/public/html/home-paciente.html" class="nav-link">Início</a>
+                 <!-- Menu de Perfil do Usuário -->
+            <div class="profile-menu-container">
+                <div class="profile-avatar" id="profile-avatar">
+                    P
+                </div>
+                <div class="profile-dropdown" id="profile-dropdown">
+                    <div class="profile-info">
+                        <div class="profile-info-avatar">P</div>
+                        <div class="profile-info-text">
+                            <p class="profile-name">Usuário Logado</p>
+                            <p class="profile-email">usuario@medlar.com</p>
+                        </div>
+                    </div>
+                    <a href="#" class="dropdown-item">
+                        <span class="icon">👤</span> Ver Perfil
+                    </a>
+                    <a href="#" class="dropdown-item">
+                        <span class="icon">⚙️</span> Configurações
+                    </a>
+                    <a href="/public/html/login.html" class="dropdown-item logout">
+                        <span class="icon">🚪</span> Sair
+                    </a>
+                </div>
+            </div>
+            <!-- Fim do Menu de Perfil -->
+            </nav>
+        </header>
+
+        <main class="main-content">
+            <div class="agenda-container">
+                <h1 class="page-title">Agenda do Paciente</h1>
+                
+                <div class="agenda-layout">
+                    <div class="calendar-section">
+                        <div class="calendar-header">
+                            <button class="calendar-nav">‹</button>
+                            <h2 class="calendar-month">Abril</h2>
+                            <button class="calendar-nav">›</button>
+                        </div>
+                        
+                        <div class="calendar-grid">
+                            <div class="calendar-weekdays">
+                                <div class="weekday">Dom</div>
+                                <div class="weekday">Seg</div>
+                                <div class="weekday">Ter</div>
+                                <div class="weekday">Qua</div>
+                                <div class="weekday">Qui</div>
+                                <div class="weekday">Sex</div>
+                                <div class="weekday">Sáb</div>
+                            </div>
+                            
+                            <div class="calendar-days">
+                                <div class="calendar-day"></div>
+                                <div class="calendar-day">1</div>
+                                <div class="calendar-day">2</div>
+                                <div class="calendar-day">3</div>
+                                <div class="calendar-day">4</div>
+                                <div class="calendar-day"></div>
+                                <div class="calendar-day"></div>
+                                
+                                <div class="calendar-day">5</div>
+                                <div class="calendar-day">6</div>
+                                <div class="calendar-day">7</div>
+                                <div class="calendar-day">8</div>
+                                <div class="calendar-day">9</div>
+                                <div class="calendar-day">10</div>
+                                <div class="calendar-day">11</div>
+                                
+                                <div class="calendar-day">12</div>
+                                <div class="calendar-day">13</div>
+                                <div class="calendar-day">14</div>
+                                <div class="calendar-day">15</div>
+                                <div class="calendar-day">16</div>
+                                <div class="calendar-day">17</div>
+                                <div class="calendar-day active">18</div>
+                                
+                                <div class="calendar-day">19</div>
+                                <div class="calendar-day">20</div>
+                                <div class="calendar-day">21</div>
+                                <div class="calendar-day">22</div>
+                                <div class="calendar-day">23</div>
+                                <div class="calendar-day">24</div>
+                                <div class="calendar-day">25</div>
+                                
+                                <div class="calendar-day">26</div>
+                                <div class="calendar-day">27</div>
+                                <div class="calendar-day">28</div>
+                                <div class="calendar-day">29</div>
+                                <div class="calendar-day">30</div>
+                                <div class="calendar-day">31</div>
+                                <div class="calendar-day"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="appointments-section">
+                        <h2 class="appointments-title">Agenda</h2>
+                        
+                        <ul class="appointment-list" id="appointments-list">
+                            <!-- Os agendamentos serão injetados aqui pelo JavaScript -->
+                        </ul>
+                    </div>
+                </div>
+                
+                <button id="btnNovoAgendamento" class="btn-primary new-appointment-btn">Novo Agendamento</button>
+            </div>
+        </main>
+        <script defer src="/public/js/agenda-paciente.js"></script>
+        <script defer src="/public/js/profile-menu.js"></script>
+    </div>
+</body>
+</html>
+</body>
+</html>

@@ -1,0 +1,652 @@
+/* Reset e configurações básicas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+}
+
+/* Cores e Variáveis */
+:root {
+    --color-primary: #4A7C59; /* Verde Medlar */
+    --color-primary-dark: #3d6249;
+    --color-background: #f8f9fa;
+    --color-card-background: white;
+    --color-text: #333;
+    --color-secondary-text: #666;
+    --color-border: #e1e5e9;
+    --color-error: #dc3545;
+}
+
+/* --- ESTRUTURA PRINCIPAL --- */
+.container {
+    padding: 2rem 1rem;
+    max-width: 1200px; /* Limita o conteúdo do formulário */
+    margin: 0 auto;
+    width: 100%;
+    flex: 1;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* --- NAVBAR (AGORA OCUPA 100% DA LARGURA) --- */
+nav {
+    background: var(--color-card-background);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Garante que a barra de fundo ocupe 100% da tela */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    /* max-width REMOVIDO para que ocupe a largura total da tela */
+    width: 100%; 
+    margin: 0 auto; 
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.navbar-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.navbar-menu a {
+    text-decoration: none;
+    color: var(--color-secondary-text);
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.navbar-menu a:hover,
+.navbar-menu a.active {
+    color: var(--color-primary);
+    background-color: #f0f8f0;
+}
+
+/* --- ALERTA RÁPIDO --- */
+#alerta {
+    position: fixed;
+    top: 70px;
+    right: 20px;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1010;
+    color: white;
+    font-weight: 600;
+    min-width: 250px;
+    text-align: center;
+}
+
+/* --- TELAS DE CADASTRO (Ocultar/Mostrar) --- */
+.tela {
+    display: none;
+    width: 100%;
+}
+
+.tela.ativa {
+    display: block;
+}
+
+/* --- CARD --- */
+.card {
+    background: var(--color-card-background);
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 700px; /* Largura do formulário */
+    margin: 0 auto;
+    width: 100%;
+}
+
+.card h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    color: var(--color-secondary-text);
+    margin-bottom: 1.5rem;
+}
+
+/* Card especial para a tela inicial */
+.card-com-imagem {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 800px;
+}
+
+.card-conteudo {
+    flex: 1;
+}
+
+.card-imagem {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e8f5e8;
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.card-imagem-box {
+    font-size: 5rem;
+}
+
+/* --- FORMULÁRIO --- */
+.etapa-info {
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+}
+
+fieldset {
+    border: 1px solid var(--color-border);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+}
+
+legend {
+    font-size: 1.25rem;
+    font-weight: 600;
+    padding: 0 1rem;
+    color: var(--color-primary);
+    margin-left: -0.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--color-text);
+}
+
+.form-group input:not([type="checkbox"]),
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--color-border);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    background: white;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(74, 124, 89, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-row {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.obrigatorio {
+    color: var(--color-primary);
+    font-weight: bold;
+}
+
+.erro-msg {
+    display: block;
+    color: var(--color-error);
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+    height: 1.2em;
+}
+
+/* --- BOTÕES --- */
+.botoes {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 2rem;
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn-primary {
+    background: var(--color-primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--color-primary-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(74, 124, 89, 0.3);
+}
+
+.btn-secondary {
+    background: white;
+    color: var(--color-secondary-text);
+    border: 2px solid var(--color-border);
+}
+
+.btn-secondary:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+/* --- DOCUMENTOS UPLOAD --- */
+.documentos-upload {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.documento-item {
+    width: 80px;
+    height: 80px;
+    border: 2px dashed var(--color-border);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    background-color: #f8f8f8;
+}
+
+.documento-item:hover {
+    border-color: var(--color-primary);
+    background-color: #e8f5e8;
+}
+
+.documento-item.uploaded {
+    border: 2px solid var(--color-primary);
+    background-color: #f0fff0;
+}
+
+.documento-item-icon {
+    font-size: 2rem;
+    color: #999;
+    transition: color 0.3s ease;
+}
+
+.documento-item.uploaded .documento-item-icon {
+    color: var(--color-primary);
+}
+
+/* --- TELA DE VALIDAÇÃO (TELA 4) --- */
+.status-validacao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 200px;
+}
+
+.spinner {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid var(--color-primary);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+    margin-bottom: 1.5rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#status_validacao {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+/* --- TELA DE NOTIFICAÇÃO (TELA 5) --- */
+.sucesso-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.sucesso-icone {
+    font-size: 3rem;
+    width: 80px;
+    height: 80px;
+    background-color: var(--color-primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+}
+
+#mensagem_notificacao {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-primary-dark);
+    margin-bottom: 1rem;
+}
+
+.data-cadastro {
+    font-size: 0.9rem;
+    color: var(--color-secondary-text);
+}
+
+/* --- TELA FIM (TELA 6) --- */
+.fim-box {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+#status_final {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+}
+
+.mensagem-fim {
+    color: var(--color-secondary-text);
+    margin-bottom: 1rem !important;
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+        /* Mantém 100% em mobile, mas com menos padding nas laterais */
+    }
+
+    .navbar-menu {
+        margin-top: 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .navbar-menu a {
+        padding: 0.25rem 0;
+    }
+
+    .card {
+        padding: 1.5rem;
+    }
+
+    .card-com-imagem {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .card-imagem {
+        order: -1;
+        margin-bottom: 1rem;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .form-row .form-group {
+        width: 100%;
+        max-width: none !important;
+    }
+    
+    .documentos-upload {
+        justify-content: center;
+    }
+}
+
+   /* Cores e Variáveis (Adicionadas para garantir consistência) */
+        :root {
+            --color-primary: #4A7C59; /* Verde Medlar */
+            --color-primary-dark: #3d6249;
+            --color-background: #f8f9fa;
+            --color-card-background: white;
+            --color-text: #333;
+            --color-secondary-text: #666;
+            --color-border: #e1e5e9;
+            --color-error: #dc3545;
+        }
+        /* --- ESTRUTURA PRINCIPAL --- (Adicionadas para garantir consistência) */
+        .container {
+            padding: 2rem 1rem;
+            max-width: 1200px; 
+            margin: 0 auto;
+            width: 100%;
+            flex: 1;
+        }
+
+        /* --- NAVBAR (AGORA OCUPA 100% DA LARGURA) --- (Adicionadas para garantir consistência) */
+        nav {
+            background: var(--color-card-background);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 100%; 
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            width: 100%; 
+            margin: 0 auto; 
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-text);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .navbar-logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .navbar-menu {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .navbar-menu a {
+            text-decoration: none;
+            color: var(--color-secondary-text);
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-menu a:hover,
+        .navbar-menu a.active {
+            color: var(--color-primary);
+            background-color: #f0f8f0;
+        }
+        
+        /* ===== Modal de Perfil (Mantido) ===== */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal {
+            background: #fff;
+            border-radius: 12px;
+            padding: 2rem;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.4s ease;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .modal-photo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-photo img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #4A7C59;
+        }
+
+        .modal-info p {
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+        }
+
+        .modal-info strong {
+            color: #4A7C59;
+        }
+
+        /* ===== Botões (Mantido) ===== */
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: #4A7C59;
+            color: #fff;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            color: #fff;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }

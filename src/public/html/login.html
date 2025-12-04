@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Medlar</title>
+  <link rel="stylesheet" href="/public/css/login.css" />
+</head>
+<body>
+  <!-- NOVA NAVBAR (Conforme a imagem) -->
+<nav class="navbar-medlar">
+  <div class="navbar-container">
+    <!-- Lado Esquerdo: Logo e Nome -->
+    <a href="#" class="navbar-brand-medlar">
+      <!-- O ícone da imagem não está disponível, então usaremos um placeholder com as cores e estrutura. -->
+      <div class="logo-wrapper">
+        <img src="/public/img/medlar.jpg" alt="Medlar Logo" class="logo-icon" />
+      </div>
+      <span class="logo-text-large">MEDLAR</span>
+    </a>
+
+    <!-- Lado Direito: Link de Login/Registro -->
+    <div class="navbar-links">
+      <a href="/public/html/index.html" class="login-link">Início</a>
+      <a href="/public/html/login.html" class="login-link">Login/Registro</a>
+    </div>
+  </div>
+</nav>
+
+  <main>
+    <!-- ALERTAS (opcional) -->
+    <div id="alerta" style="display:none;"></div>
+
+    <!-- TELA DE LOGIN -->
+    <div class="login-container tela ativa" id="tela-login">
+      <h1 class="login-title">Login</h1>
+
+      <form id="form-login" class="login-form" novalidate>
+        <div class="form-group">
+          <label for="email" class="form-label">E-mail</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="form-input"
+            placeholder="seu.email@exemplo.com"
+            autocomplete="email"
+            inputmode="email"
+            autocapitalize="none"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="password" class="form-label">Senha</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            class="form-input"
+            placeholder="Sua senha"
+            autocomplete="current-password"
+            required
+          />
+        </div>
+
+        <div class="forgot-password-link">
+          <a href="#" id="link-esqueci-senha">Esqueceu a senha?</a>
+        </div>
+
+        <button type="submit" class="btn-primary">Entrar</button>
+      </form>
+
+      <p class="register-link">
+        Ainda não tem conta? <a href="/public/html/cadastro.html" class="link">Registrar-se</a>
+      </p>
+    </div>
+
+    <!-- TELA: ESQUECI A SENHA -->
+    <div class="login-container tela" id="tela-esqueci-senha">
+      <h1 class="login-title">Redefinir Senha</h1>
+
+      <p class="instrucao">Informe o e-mail cadastrado para receber as instruções de redefinição de senha.</p>
+
+      <form id="form-redefinir" class="redefinir-form" novalidate>
+        <div class="form-group">
+          <label for="email-redefinir" class="form-label">E-mail</label>
+          <input
+            type="email"
+            id="email-redefinir"
+            name="email-redefinir"
+            class="form-input"
+            placeholder="seu.email@exemplo.com"
+            autocomplete="email"
+            inputmode="email"
+            autocapitalize="none"
+            required
+          />
+        </div>
+
+        <button type="submit" class="btn-primary">Enviar Instruções</button>
+      </form>
+
+      <p class="register-link">
+        <a href="#" id="link-voltar-login" class="link">Voltar ao Login</a>
+      </p>
+    </div>
+  </main>
+
+  <!-- JS -->
+  <!-- se o arquivo estiver na mesma pasta, deixe assim; se estiver em /js, use src="js/medlar-login.js" -->
+  <script defer src="/public/js/login.js"></script>
+</body>
+</html>
