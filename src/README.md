@@ -82,6 +82,5 @@ Aqui devem ficar os arquivos-fonte do projeto: HTML, CSS, Javascript, imagens, e
 funcionamento do sistema.
 
 
-[medlar_telas4.zip](https://github.com/user-attachments/files/23400507/medlar_telas4.zip)
-
+<li><a href="src/"> Código Fonte</a></li>
 
