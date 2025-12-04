@@ -58,9 +58,9 @@ Este documento fornece as instruções resumidas para instalar as dependências 
 <li><a href="docs/Apresentaçãodasolução.md"> Apresentação da solução</a></li>
 
 
-# 📜 Histórico de Versões do Sistema Medlar
+## 📜 Histórico de Versões do Sistema Medlar
 
-## ✨ Versão 1.5.0: Lançamento Principal (Major Release)
+### ✨ Versão 1.5.0: Lançamento Principal (Major Release)
 
 **Status:** Lançamento Completo
 **Foco:** Implementação da interface completa e processos de negócio essenciais.
