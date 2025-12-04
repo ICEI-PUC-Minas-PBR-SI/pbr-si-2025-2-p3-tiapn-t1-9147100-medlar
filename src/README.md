@@ -82,5 +82,5 @@ Aqui devem ficar os arquivos-fonte do projeto: HTML, CSS, Javascript, imagens, e
 funcionamento do sistema.
 
 
-<li><a href="src/"> Código Fonte</a></li>
+<li><a href="/src"> Código Fonte</a></li>
 
