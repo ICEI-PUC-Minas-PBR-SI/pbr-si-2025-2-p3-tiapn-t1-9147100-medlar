@@ -53,10 +53,13 @@ Este documento fornece as instruções resumidas para instalar as dependências 
 
 <li><a href="src/README.md"> Código Fonte</a></li>
 
+---
+
 # Apresentação
 
 <li><a href="docs/Apresentaçãodasolução.md"> Apresentação da solução</a></li>
 
+---
 
 ## 📜 Histórico de Versões do Sistema Medlar
 
