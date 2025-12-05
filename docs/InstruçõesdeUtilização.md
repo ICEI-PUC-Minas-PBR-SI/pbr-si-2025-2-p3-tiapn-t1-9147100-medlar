@@ -18,7 +18,7 @@ A aplicação está configurada para se conectar a um banco de dados MySQL.
 3.  **Credenciais:** A aplicação utiliza as seguintes credenciais de conexão, conforme definido em `src/config/db.js` e `src/server.js`:
     *   **Host:** `localhost`
     *   **Usuário:** `root`
-    *   **Senha:** `@1997`
+    *   **Senha:** `1604pv`
 
     > **Nota:** Se suas credenciais de banco de dados forem diferentes, você precisará editar os arquivos `src/config/db.js` e `src/server.js` para refletir a configuração correta.
 
