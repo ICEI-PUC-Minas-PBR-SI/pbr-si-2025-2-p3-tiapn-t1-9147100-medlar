@@ -1,11 +1,15 @@
-## 1. Pré-requisitos
+## Guia de Instalação e Execução da Aplicação Medlar
+
+Este guia detalha os passos necessários para configurar e executar a aplicação Medlar, que utiliza Node.js e MySQL.
+
+### 1. Pré-requisitos
 
 Para executar a aplicação, você precisará ter instalado em seu ambiente:
 
 *   **Node.js e npm:** A aplicação é construída em Node.js.
 *   **MySQL:** A aplicação utiliza um banco de dados MySQL.
 
-## 2. Configuração do Banco de Dados
+### 2. Configuração do Banco de Dados
 
 A aplicação está configurada para se conectar a um banco de dados MySQL.
 
@@ -20,7 +24,7 @@ A aplicação está configurada para se conectar a um banco de dados MySQL.
 
 4.  **Estrutura do Banco de Dados (Schema):** Você precisará importar o schema (estrutura das tabelas) do projeto para o banco de dados `medlar`. O arquivo de schema não estava no ZIP fornecido, mas é essencial para o funcionamento da aplicação (ex: tabelas `paciente`, `profissional`, `agendamento`, etc.).
 
-## 3. Instalação de Dependências
+### 3. Instalação de Dependências
 
 1.  **Navegue até o diretório do projeto:**
     ```bash
@@ -31,7 +35,7 @@ A aplicação está configurada para se conectar a um banco de dados MySQL.
     npm install
     ```
 
-## 4. Execução da Aplicação
+### 4. Execução da Aplicação
 
 1.  **Inicie o servidor:** Use o script `start` definido no `package.json` para iniciar a aplicação:
     ```bash
@@ -46,5 +50,15 @@ A aplicação está configurada para se conectar a um banco de dados MySQL.
     ```
     http://localhost:3000
     ```
+
+### Nota Importante sobre Testes e Funcionalidades
+
+Ao acessar a aplicação, você será direcionado para a página principal (`Index`). Para testar o fluxo de agendamento, é crucial ter em mente as seguintes observações:
+
+*   **Sistema de Pagamento Inoperante:** O sistema de pagamento **não está implementado ou funcional** nesta versão. Portanto, a verificação direta de um agendamento após o cadastro **não funcionará** como esperado, pois a confirmação de pagamento não pode ser concluída.
+*   **Testes de Agendamento:** Para simular e testar a funcionalidade de agendamento, você precisará intervir diretamente no banco de dados.
+    1.  Acesse o banco de dados `medlar` usando uma ferramenta de gerenciamento (ex: MySQL Workbench, DBeaver).
+    2.  Selecione um **profissional** e um **paciente** existentes nas tabelas correspondentes.
+    3.  Use os IDs desses registros para testar a criação de agendas e agendamentos, contornando a etapa de pagamento e simulando um agendamento bem-sucedido.
 
 ---
