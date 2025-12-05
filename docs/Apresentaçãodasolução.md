@@ -11,8 +11,9 @@
 
 ## Slides
 
-- [📄 Abrir documento em PDF](apresentacao/Trabalho interdisciplinar - Aplicações para Processos de Negócios (1).pdf)
----
+
+---[MEDLAR.pptx](https://github.com/user-attachments/files/23952491/MEDLAR.pptx)
+
 ## Video
 
 https://github.com/user-attachments/assets/476e2579-5cf8-477c-a4bf-dd739757b2f7
