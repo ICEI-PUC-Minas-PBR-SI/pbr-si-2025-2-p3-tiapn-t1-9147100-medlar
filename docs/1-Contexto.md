@@ -56,5 +56,5 @@ modelo de cuidado domiciliar no Brasil.
 
 •Familiares/Responsáveis: Pessoas que gerenciam a contratação e acompanhamento dos serviços em nome do paciente.
 •Profissionais da Saúde: Técnicos de enfermagem, enfermeiros, fisioterapeutas, fonoaudiólogos e cuidadores que prestam os serviços.
- 
+•Pacientes: Indivíduos que necessitam de cuidados contínuos em domicílio (acamados, idosos, pós-cirúrgicos, etc.)"
 
