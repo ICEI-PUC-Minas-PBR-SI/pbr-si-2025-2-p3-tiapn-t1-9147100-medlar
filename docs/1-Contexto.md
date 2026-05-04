@@ -3,7 +3,7 @@
 O desenvolvimento de um aplicativo para centralizar profissionais de 
 saúde no atendimento domiciliar (Home Care) oferece uma solução prática e 
 inovadora para pacientes que necessitam de cuidados contínuos. Conectando 
-técnicos de enfermagem, enfermeiros, fisioterapeutas e fonoaudiólogos às 
+técnicos de enfermagem, enfermeiros, fisioterapeutas,Cuidador e fonoaudiólogos às 
 famílias, a ferramenta promove um cuidado mais humanizado, eficiente e 
 transparente. Com funcionalidades como relatórios diários sobre a evolução do 
 paciente, o aplicativo melhora a comunicação, reduz internações hospitalares 
