@@ -6,6 +6,8 @@ O site permitirá a conexão entre profissionais capacitados, como técnicos de 
 
 A plataforma está sendo desenvolvida para evoluir constantemente e já prevê futuras funcionalidades modernas e estratégicas. Entre elas, um sistema de pagamento integrado que permitirá ao usuário efetuar pagamentos diretamente pelo site, e, após a transação, o comprovante de pagamento será automaticamente enviado para o e-mail do médico responsável, garantindo que o profissional tenha acesso ao documento de forma rápida e organizada.
 
+Está prevista também a inclusão de cuidadores como prestadores de serviço na plataforma. Diferentemente dos profissionais de saúde regulamentados, os cuidadores atuam no suporte cotidiano ao paciente — auxiliando na higiene pessoal, alimentação, mobilização e companhia — atendendo públicos diversos, como idosos, crianças com necessidades especiais, adultos com deficiência e pacientes em recuperação pós-cirúrgica. Essa ampliação tornará o Medlar uma solução ainda mais completa para o Home Care.
+
 O projeto também incluirá, no futuro, a funcionalidade de acompanhamento diário da evolução dos pacientes, com relatórios detalhados acessíveis às famílias, além da implementação de autenticação segura via token para cadastro e recuperação de senha, sistema de redefinição de senha e um chatbot com inteligência artificial para auxiliar o usuário com dúvidas, navegação, suporte e orientações iniciais.
 
 Com essas implementações planejadas, o site tem potencial para transformar o Home Care digital no futuro, tornando-o mais acessível, seguro, eficiente e centrado no bem-estar do paciente, de sua família e do profissional de saúde envolvido.
