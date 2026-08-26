@@ -9,7 +9,7 @@ transparente. Com funcionalidades como relatórios diários sobre a evolução d
 paciente, o aplicativo melhora a comunicação, reduz internações hospitalares 
 desnecessárias e eleva a qualidade de vida dos pacientes. Essa iniciativa 
 moderniza o Home Care, alinhando-se às tendências digitais e às demandas 
-por serviços acessíveis e integrados. 
+por serviços acessíveis e integrados. Se encaixa na ODS 3 - Saúde e Bem estar
 
 ## Problema
 O diagnóstico do cenário atual aponta para uma dificuldade central no encontro e na 
